@@ -14,15 +14,26 @@ public class Employee implements Serializable {
     private String jobTitle;
     private String imageUrl;
 
+    private String empoCode;
+ 
 
     public Employee(){}
 
-    public Employee(Long id, String name, String email, String jobTitle, String imageUrl) {
+    public Employee(Long id, String name, String email, String jobTitle, String imageUrl, String empoCode) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
         this.imageUrl = imageUrl;
+        this.empoCode = empoCode;
+    }
+
+    public String getEmpoCode() {
+        return empoCode;
+    }
+
+    public void setEmpoCode(String empoCode) {
+        this.empoCode = empoCode;
     }
 
     public Long getId() {

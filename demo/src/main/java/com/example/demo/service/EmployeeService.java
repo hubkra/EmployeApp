@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class EmployeeService {
@@ -15,6 +16,13 @@ public class EmployeeService {
     @Autowired
     public EmployeeService(EmployeeRepo employeeRepo) {
         this.employeeRepo = employeeRepo;
+    }
+
+    public Employee addEmployee(Employee employee)
+    {
+        employee.setEmpoCode(UUID.randomUUID().toString());
+        return employeeRepo.save(employee);
+
     }
 
     public List<Employee> findEmployees()
