@@ -15,12 +15,12 @@ public class EmployeeService {
 
     @Autowired
     public EmployeeService(EmployeeRepo employeeRepo) {
+
         this.employeeRepo = employeeRepo;
     }
 
     public Employee addEmployee(Employee employee)
     {
-        employee.setEmpoCode(UUID.randomUUID().toString());
         return employeeRepo.save(employee);
 
     }
