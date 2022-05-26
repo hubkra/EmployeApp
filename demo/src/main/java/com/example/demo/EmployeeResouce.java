@@ -14,7 +14,6 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/employee")
-@CrossOrigin("http://localhost:4200")
 public class EmployeeResouce {
     private final EmployeeService employeeService;
 
