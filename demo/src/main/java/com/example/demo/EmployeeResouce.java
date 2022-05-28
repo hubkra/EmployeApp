@@ -1,16 +1,15 @@
 package com.example.demo;
 
 import com.example.demo.model.Employee;
-import com.example.demo.repo.EmployeeRepo;
 import com.example.demo.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
+
 
 @RestController
 @RequestMapping("/employee")
@@ -51,10 +50,9 @@ public class EmployeeResouce {
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
 
-        @DeleteMapping("/delete/{id}")
-        public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id)
-        {
-            employeeService.deleteEmployee(id);
-            return new ResponseEntity<>(HttpStatus.OK);
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {
+        employeeService.deleteEmployee(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
