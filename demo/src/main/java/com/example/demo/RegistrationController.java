@@ -16,6 +16,7 @@ public class RegistrationController {
     @CrossOrigin(origins = "http://localhost:4200")
     public User registerUser(@RequestBody User user) throws Exception {
         String tempEmailId = user.getEmailId();
+        User userObj =null;
         if(tempEmailId !=null && !"".equals(tempEmailId))
         {
             User userobj = service.fetchUserByEmailId(tempEmailId);
@@ -23,12 +24,13 @@ public class RegistrationController {
             {
                 throw new Exception("Uzytkownik z takim emailem "+tempEmailId+" juz istnieje");
             }
+            userObj= service.saveUser(user);
 
         }
-        User userObj =null;
-       userObj= service.saveUser(user);
-       return userObj;
-
+        if(userObj == null){
+            throw new Exception("Niezgodne dane!");
+        }
+        return userObj;
     }
     @PostMapping("/login")
     @CrossOrigin(origins = "http://localhost:4200")

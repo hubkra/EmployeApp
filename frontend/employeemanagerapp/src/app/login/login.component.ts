@@ -28,4 +28,8 @@ export class LoginComponent implements OnInit {
         this.msg="Bledne dane";}
       );
   }
+
+  gotoregistration(){
+    this._router.navigate(['/registration'])
+  }
 }

@@ -14,15 +14,16 @@
 
     <!-- Login Form -->
     <form #loginform="ngForm" (ngSubmit)="loginUser()">
-        <small class="danger">{{msg}}</small>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" [(ngModel)]="user.emailId">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"[(ngModel)]="user.password">
+        <small class="text-danger">{{msg}}</small>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" [(ngModel)]="user.emailId" required #email="ngModel">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"[(ngModel)]="user.password">
+      
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Register</a>
+      <a class="underlineHover" (click)="gotoregistration()">Register</a>
     </div>
 
   </div>
