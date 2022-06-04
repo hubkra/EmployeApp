@@ -32,4 +32,18 @@ public class RegistrationController {
        return userObj;
 
     }
+    @PostMapping("/login")
+    public User  loginUser(@RequestBody User user) throws Exception {
+        String tempEmailId =user.getEmailId();
+        String tempPassword = user.getPassword();
+        User userObj =null;
+        if(tempEmailId !=null && tempPassword !=null)
+        {
+           userObj=  service.fetchUserByEmailIdAndPassword(tempEmailId, tempPassword);
+        }
+        if(userObj == null){
+            throw new Exception("Niezgodne dane!");
+        }
+        return userObj;
+    }
 }
