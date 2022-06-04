@@ -1,8 +1,8 @@
-export interface User {
-    id: number;
-    email: string;
+export class User {
+
+    id:number;
+    emailId:string;
+    userName:string;
     password:string;
-    fisrtname: string;
-    lastname:string;
-   
-  }
+    constructor(){};
+}
