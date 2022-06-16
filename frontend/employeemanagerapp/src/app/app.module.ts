@@ -9,6 +9,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AppRoutingModule, routingComponents} from './app-routing.module';
 import { EmployeeComponent } from './employee/employee.component';
 import { AppComponent } from './app.component';
+import { ProjectComponent } from './project/project.component';
+import { TeamsComponent } from './teams/teams.component';
 
 
 
@@ -16,7 +18,9 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     RegistrationComponent,
-    routingComponents
+    routingComponents,
+    ProjectComponent,
+    TeamsComponent
     
   ],
   imports: [

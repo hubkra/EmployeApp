@@ -3,6 +3,7 @@ import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -15,7 +16,7 @@ export class EmployeeComponent implements OnInit {
   public deleteEmployee?: Employee;
   title: any;
 
-  constructor(private employeeService: EmployeeService){}
+  constructor(private employeeService: EmployeeService, private _route : Router){}
 
   ngOnInit() {
     this.getEmployees();
@@ -59,6 +60,7 @@ export class EmployeeComponent implements OnInit {
       }
     );
   }
+  
 
   public onDeleteEmloyee(employeeId: number): void {
     this.employeeService.deleteEmployee(employeeId).subscribe(
@@ -110,5 +112,8 @@ export class EmployeeComponent implements OnInit {
   }
 
 
+  gotoproject(){
+    this._route.navigate(['/findAllProject'])
+  }
 
 }

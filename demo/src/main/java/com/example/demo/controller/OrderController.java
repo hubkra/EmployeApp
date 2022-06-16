@@ -5,10 +5,7 @@ import com.example.demo.model.Project;
 import com.example.demo.repo.ProjectRepo;
 import com.example.demo.repo.TeamsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,4 +25,7 @@ public class OrderController {
     public List<Project> findAllProject(){
         return projectRepo.findAll();
     }
+
+
+
 }

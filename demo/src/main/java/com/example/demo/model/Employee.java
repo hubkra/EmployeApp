@@ -1,7 +1,12 @@
 package com.example.demo.model;
 
+import org.hibernate.annotations.JoinColumnOrFormula;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Employee implements Serializable {
@@ -14,21 +19,31 @@ public class Employee implements Serializable {
     private String jobTitle;
     private String imageUrl;
 
+    @OneToMany(targetEntity = EmployeeDetails.class, cascade = CascadeType.ALL)
+    @JoinColumn(name ="employee_id", referencedColumnName = "id")
+    private List<EmployeeDetails> details;
 
- 
+
 
     public Employee(){}
 
-    public Employee(Long id, String name, String email, String jobTitle, String imageUrl) {
+    public Employee(Long id, String name, String email, String jobTitle, String imageUrl, List details) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
         this.imageUrl = imageUrl;
+        this.details=details;
 
     }
 
+    public List<EmployeeDetails> getDetails() {
+        return details;
+    }
 
+    public void setDetails(List<EmployeeDetails> details) {
+        this.details = details;
+    }
 
     public Long getId() {
         return id;

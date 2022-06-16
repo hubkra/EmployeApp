@@ -8,6 +8,9 @@
           <li class="nav-item active">
              <a class="nav-link" (click)="onOpenModal(null, 'add')" >Add Employee <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" (click)="gotoproject()" >Projects Table <span class="sr-only">(current)</span></a>
+         </li>
        </ul>
        <form class="form-inline my-2 my-lg-0">
           <input  type="search" (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel
