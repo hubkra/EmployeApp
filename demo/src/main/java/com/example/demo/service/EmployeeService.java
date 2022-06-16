@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.model.Employee;
-import com.example.demo.repo.DetailsRepo;
 import com.example.demo.repo.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +18,7 @@ public class EmployeeService {
 
         this.employeeRepo = employeeRepo;
     }
-    @Autowired
-    public DetailsRepo detailsRepo;
+
 
     public Employee addEmployee(Employee employee)
     {

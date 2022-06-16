@@ -18,4 +18,8 @@ export class ProjectService {
     return this.http.post<Project>(`${this.apiServerUrl}/addProject`, project);
   }
 
+  public deleteProject(projectId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/delete/${projectId}`);
+  }
+
 }

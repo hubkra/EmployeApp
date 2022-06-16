@@ -38,6 +38,10 @@ title:any;
       }
     );
   }
+
+ 
+
+
   public onAddEmloyee(addForm: NgForm): void {
     document.getElementById('add-employee-form').click();
     this.projectService.addProject(addForm.value).subscribe(
@@ -53,7 +57,35 @@ title:any;
     ); 
 
     } 
+    public onDeleteEmloyee(projectId: number): void {
+      this.projectService.deleteProject(projectId).subscribe(
+        (response: void) => {
+          console.log(response);
+          this.getProject();
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+      );
+    }
     
+    public onOpenModal(projects: Project, mode: string): void {
+      const container = document.getElementById('main-container');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.style.display = 'none';
+      button.setAttribute('data-toggle', 'modal');
+      if (mode === 'add') {
+        button.setAttribute('data-target', '#addEmployeeModal');
+      }
+     
+      if (mode === 'delete') {
+        this.deleteProject = projects;
+        button.setAttribute('data-target', '#deleteEmployeeModal');
+      }
+      container.appendChild(button);
+      button.click();
+    }
 
 gotoemployee(){
   this._rotue.navigate(['/employee'])

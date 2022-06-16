@@ -32,11 +32,35 @@
           <ul class="list-group list-group-flush">
              <li  class="list-group-item"><i class="fa fa-envelope float-right"></i>Priorytet: {{projects?.priority}} </li>
           </ul>
-          
+          <div class="card-body">
+            <div class="float-right btn-group btn-group-sm">
+              
+               <a (click)="onOpenModal(projects, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete" style="color:white ;"><i class="fa fa-times"></i> DELETE</a>
+            </div>
          
           </div>
        </div>
     </div>
   </div>
   
-  
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="deleteModelLabel">Delete Project</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <p>Are you sure you want to delete employee {{deleteProject?.name}}?</p>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button (click)="onDeleteEmloyee(deleteProject?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+  </div>
