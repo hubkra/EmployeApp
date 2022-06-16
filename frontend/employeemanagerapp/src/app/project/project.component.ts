@@ -7,16 +7,18 @@ import { Router } from '@angular/router';
 import { Teams } from '../teams/teams';
 import { Observable} from 'rxjs';
 
+
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-public project: Project[]=[];
+public project:Project[]=[];
 public editProject!:Project;
 public deleteProject!:Project;
-public teams!:Teams[];
+
+
 
 title:any;
   constructor(private projectService: ProjectService, private _rotue:Router) { }
@@ -56,4 +58,5 @@ title:any;
 gotoemployee(){
   this._rotue.navigate(['/employee'])
 }
+
 }

@@ -1,5 +1,5 @@
 export class Teams{
-    id!:number;
-    name!:string;
-    leader!:string;
+    id?:number;
+    name?:string;
+    leader?:string;
 }

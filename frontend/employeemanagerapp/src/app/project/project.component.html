@@ -17,21 +17,22 @@
     </div>
   </nav>
   <div class="container" id="main-container" *ngIf="project">
-  <div class="row" >
+  <div class="row"  >
     <div *ngFor="let projects of project" class="cards">
-       <div class="card m-b-30">
-          <div class="card-body row">
-             <div class="col-1">
-                
+        <div class="card m-b-30">
+           <div class="card-body row">
+              <div class="col-1">
+                  img
+              </div>
+              <div class=" card-title align-self-center mb-0">
+                 <h5>Name of Project: {{projects?.name}}</h5>
+                    <p class="m-0" *ngFor="let team of projects.teams">Name of team: {{ team.name }}</p>
+              </div>
              </div>
-             <div class=" card-title align-self-center mb-0">
-                <h5>Name of Project: {{projects?.name}}</h5>
-                <p class="m-0">Name of team: {{projects?.teams.name}}</p>
-             </div>
-          </div>
           <ul class="list-group list-group-flush">
-             <li  class="list-group-item"><i class="fa fa-envelope float-right"></i>Priorytet: {{projects?.priority}}</li>
+             <li  class="list-group-item"><i class="fa fa-envelope float-right"></i>Priorytet: {{projects?.priority}} </li>
           </ul>
+          
          
           </div>
        </div>
