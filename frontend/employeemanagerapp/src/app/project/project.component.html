@@ -24,15 +24,16 @@
         <div class="card m-b-30">
            <div class="card-body row">
               <div class="col-1">
-                  img
+               <a href=""><img src="https://img.freepik.com/free-vector/project-team-avatars_1325-1399.jpg" alt="" class="img-fluid rounded-circle w-60"></a>
               </div>
               <div class=" card-title align-self-center mb-0">
-                 <h5>Name of Project: {{projects?.name}}</h5>
-                    <p class="m-0" *ngFor="let team of projects.teams">Name of team: {{ team.name }}</p>
+                 <h5>Name of Project: <br/>{{projects?.name}}</h5>
+                    
               </div>
              </div>
           <ul class="list-group list-group-flush">
              <li  class="list-group-item"><i class="fa fa-envelope float-right"></i>Priorytet: {{projects?.priority}} </li>
+             <p class="m-0" *ngFor="let team of projects.teams">&nbsp; &nbsp;&nbsp;Name of team:   &nbsp; {{ team.name }}</p>
           </ul>
           <div class="card-body">
             <div class="float-right btn-group btn-group-sm">
