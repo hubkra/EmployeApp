@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../project.service';
+import { ProjectService } from './project.service';
 import { Project } from './project';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
@@ -42,7 +42,7 @@ title:any;
  
 
 
-  public onAddEmloyee(addForm: NgForm): void {
+  public onAddProject(addForm: NgForm): void {
     document.getElementById('add-employee-form').click();
     this.projectService.addProject(addForm.value).subscribe(
       (response: Project) => {
@@ -57,7 +57,7 @@ title:any;
     ); 
 
     } 
-    public onDeleteEmloyee(projectId: number): void {
+    public onDeleteProject(projectId: number): void {
       this.projectService.deleteProject(projectId).subscribe(
         (response: void) => {
           console.log(response);

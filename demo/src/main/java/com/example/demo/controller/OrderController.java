@@ -28,6 +28,11 @@ public class OrderController {
             return projectRepo.findAll();
         }
 
+        @PutMapping("/updateProject")
+        public Project updateProject(@RequestBody OrderRequest request)
+        {
+            return projectRepo.save(request.getProject());
+        }
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteProject(@PathVariable("id") Long id) {
         projectRepo.deleteById(id);
