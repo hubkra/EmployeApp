@@ -19,4 +19,14 @@ public class RegistrationService {
     {
         return userRepo.save(user);
     }
+
+    public User fetchUserByEmailId(String email)
+    {
+       return  userRepo.findByEmailId(email);
+    }
+    public User fetchUserByEmailIdAndPassword(String email, String password)
+    {
+        return  userRepo.findByEmailIdAndPassword(email, password);
+    }
+
 }

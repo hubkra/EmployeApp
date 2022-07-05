@@ -1,13 +1,26 @@
 package com.example.demo.model;
 
+import javax.persistence.*;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
     private int id;
-    private String email;
+    private String emailId;
     private String userName;
     private String password;
 
     public User(){}
-     
+
+    public User(int id, String emailId, String userName, String password) {
+        this.id = id;
+        this.emailId = emailId;
+        this.userName = userName;
+        this.password = password;
+    }
+
     public int getId() {
         return id;
     }
@@ -16,12 +29,12 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
     public String getUserName() {
@@ -39,6 +52,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }
