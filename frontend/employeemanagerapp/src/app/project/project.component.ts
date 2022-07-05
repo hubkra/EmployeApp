@@ -20,6 +20,7 @@ public deleteProject!:Project;
 
 
 
+
 title:any;
   constructor(private projectService: ProjectService, private _rotue:Router) { }
 
